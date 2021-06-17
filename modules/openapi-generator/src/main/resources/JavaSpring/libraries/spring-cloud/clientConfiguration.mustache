@@ -39,10 +39,20 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 {{/isOAuth}}
 {{/authMethods}}
 
+@org.springframework.boot.context.properties.ConfigurationProperties("feign.{{artifactId}}")
 @Configuration
 @EnableConfigurationProperties
 public class ClientConfiguration {
-
+  private String url;
+  
+  public String getUrl() {
+    return url;
+  }
+  
+  public void setUrl(String value) {
+    url = value;
+  }
+  
 {{#authMethods}}
     {{#isBasic}}
   @Value("${{openbrace}}{{#lambda.lowercase}}{{{title}}}{{/lambda.lowercase}}.security.{{{name}}}.username:{{closebrace}}")
