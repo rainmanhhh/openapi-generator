@@ -39,7 +39,7 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 {{/isOAuth}}
 {{/authMethods}}
 
-@org.springframework.boot.context.properties.ConfigurationProperties("feign.{{artifactId}}")
+@org.springframework.boot.context.properties.ConfigurationProperties("api-client.{{groupId}}.{{artifactId}}")
 @Configuration
 @EnableConfigurationProperties
 public class ClientConfiguration {
