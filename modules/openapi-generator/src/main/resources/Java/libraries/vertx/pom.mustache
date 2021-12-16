@@ -286,6 +286,16 @@
             <version>${javax-annotation-version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api-version}</version>
+        </dependency>
+        <dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson-dataformat-xml-version}</version>
+        </dependency>
 
         <!-- test dependencies -->
         <dependency>
@@ -311,5 +321,7 @@
         <jackson-databind-nullable-version>0.2.1</jackson-databind-nullable-version>
         <javax-annotation-version>1.3.2</javax-annotation-version>
         <junit-version>4.13.1</junit-version>
+        <jaxb-api-version>2.3.0</jaxb-api-version>
+        <jackson-dataformat-xml-version>2.9.5</jackson-dataformat-xml-version>
     </properties>
 </project>
