@@ -1,5 +1,6 @@
 package {{configPackage}};
 
+import java.util.Map;
 {{#authMethods}}
 {{#isBasic}}
 import feign.auth.BasicAuthRequestInterceptor;
@@ -43,7 +44,17 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 @Configuration
 @EnableConfigurationProperties
 public class ClientConfiguration {
+  private Map<String, String> names;
+  
   private String url;
+  
+  public Map<String, String> getNames() {
+	return names;
+  }
+  
+  public void setNames(Map<String, String> value) {
+	names = value;
+  }
   
   public String getUrl() {
     return url;
