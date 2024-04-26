@@ -166,12 +166,7 @@ export class {{classname}} extends BaseAPI {
         {{#formParams}}
         {{#isArray}}
         if ({{> paramNamePartial}} !== undefined) {
-            {{#isCollectionFormatMulti}}
             {{> paramNamePartial}}.forEach((element) => formData.append('{{baseName}}', element as any))
-            {{/isCollectionFormatMulti}}
-            {{^isCollectionFormatMulti}}
-            formData.append('{{baseName}}', {{> paramNamePartial}}.join(COLLECTION_FORMATS['{{collectionFormat}}']));
-            {{/isCollectionFormatMulti}}
         }
 
         {{/isArray}}
