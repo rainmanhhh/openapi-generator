@@ -167,7 +167,7 @@ export class {{classname}} extends BaseAPI {
         {{#isArray}}
         if ({{> paramNamePartial}} !== undefined) {
             {{> paramNamePartial}}.forEach((element) => {
-                if (element instanceof Blob)
+                if ((element as any) instanceof Blob)
                     formData.append('{{baseName}}', element as any, (element as any).name)
                 else
                     formData.append('{{baseName}}', element as any)
